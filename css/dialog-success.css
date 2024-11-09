@@ -1,0 +1,80 @@
+.dialog__hidden {
+    display: none;
+    opacity: 0;
+    transform: scale(0);
+}
+
+/* USING THE CLASS ABOVE TO SHOW IT WITH JS AFTER THE FORM IS SUCCSEFUL COMPLETED */
+
+.dialog {
+    padding: 1.5rem;
+    min-height: 100dvh;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 999;
+}
+
+.dialog__icon {
+    width: 64px;
+    grid-row: 3/5;
+}
+
+.dialog__text {
+    margin-top: -10px;
+    min-height: inherit;
+    display: grid;
+    grid-template-rows: repeat(15, calc((100dvh - 2rem) / 15));
+    align-items: center;
+}
+
+.dialog__title {
+    font-weight: 600;
+    font-size: 2.6rem;
+    margin-top: 1.5625rem;
+    line-height: 0.9;
+    grid-row: 5/7;
+}
+
+.dialog__confirmation-message {
+    font-size: 16px;
+    margin-top: 10px;
+    grid-row: 7/10;
+}
+
+.dialog__dismiss-btn {
+    height: 3.5rem;
+    grid-row: 15/-1;
+}
+
+@media (width > 768px) {
+
+    .dialog {
+        position: relative;
+        max-width: 500px;
+        min-height: 400px;
+        border-radius: 2.5rem;
+        padding: 3rem;
+    }
+
+    .dialog__text {
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .dialog__icon {
+        grid-row: 1/2;
+    }
+
+    .dialog__title {
+        grid-row: 2/3;
+        font-size: 60px;
+        color: hsl(234, 29%, 20%);
+    }
+
+    .dialog__confirmation-message {
+        grid-row: 3/4;
+        font-size: 1.125rem;
+    }
+
+}
